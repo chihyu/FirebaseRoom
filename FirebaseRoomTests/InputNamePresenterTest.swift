@@ -7,7 +7,6 @@
 //
 
 import XCTest
-//@testable import MockInputNameView
 
 class InputNamePresenterTest: XCTestCase {
     

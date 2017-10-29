@@ -11,12 +11,16 @@ import Foundation
 class InputNamePresenter {
 
     let mView:InputNameView
+    var nameUserDefaults :UserDefaults!
     
     required init(view: InputNameView) {
         self.mView = view
+        nameUserDefaults = UserDefaults.standard
     }
     
     func checkGoButtonEnabled() {
+        nameUserDefaults.set(mView.getInputName(), forKey: "name")
+        nameUserDefaults.synchronize()
         mView.setGoButtonEnabled(enabled: !mView.getInputName().isEmpty)
     }
 }
