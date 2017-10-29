@@ -21,7 +21,6 @@
 		4A71849F1FA5F23100FA140C /* MockMessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A71849E1FA5F23100FA140C /* MockMessageService.swift */; };
 		4A7184A11FA6064200FA140C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7184A01FA6064200FA140C /* Message.swift */; };
 		4A7184A21FA6064200FA140C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7184A01FA6064200FA140C /* Message.swift */; };
-		4A9C63411FA618A20027423F /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9C63401FA618A20027423F /* MessageCell.swift */; };
 		4AA146351FA5A0D500517917 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA146341FA5A0D500517917 /* AppDelegate.swift */; };
 		4AA146371FA5A0D500517917 /* InputNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA146361FA5A0D500517917 /* InputNameViewController.swift */; };
 		4AA1463A1FA5A0D500517917 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA146381FA5A0D500517917 /* Main.storyboard */; };
@@ -67,7 +66,6 @@
 		4A71849C1FA5F21600FA140C /* ChatPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPresenterTests.swift; sourceTree = "<group>"; };
 		4A71849E1FA5F23100FA140C /* MockMessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMessageService.swift; sourceTree = "<group>"; };
 		4A7184A01FA6064200FA140C /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		4A9C63401FA618A20027423F /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		4AA146311FA5A0D500517917 /* FirebaseRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AA146341FA5A0D500517917 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AA146361FA5A0D500517917 /* InputNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNameViewController.swift; sourceTree = "<group>"; };
@@ -189,7 +187,6 @@
 				4A7184921FA5EF8700FA140C /* MessageService.swift */,
 				4A7184951FA5EFCB00FA140C /* FirebaseMessageService.swift */,
 				4A7184A01FA6064200FA140C /* Message.swift */,
-				4A9C63401FA618A20027423F /* MessageCell.swift */,
 			);
 			path = FirebaseRoom;
 			sourceTree = "<group>";
@@ -515,7 +512,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A9C63411FA618A20027423F /* MessageCell.swift in Sources */,
 				4AA146681FA5B25000517917 /* InputNamePresenter.swift in Sources */,
 				4AA146371FA5A0D500517917 /* InputNameViewController.swift in Sources */,
 				4A7184961FA5EFCB00FA140C /* FirebaseMessageService.swift in Sources */,

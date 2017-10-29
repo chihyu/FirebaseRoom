@@ -12,4 +12,5 @@ protocol ChatView {
     func getInutMessage() -> String
     func cleanInputMessage()
     func messageAdded()
+    func setButtonEnabled(enabled: Bool)
 }

@@ -19,8 +19,11 @@ class InputNamePresenter {
     }
     
     func checkGoButtonEnabled() {
+        mView.setGoButtonEnabled(enabled: !mView.getInputName().isEmpty)
+    }
+    
+    func go() {
         nameUserDefaults.set(mView.getInputName(), forKey: "name")
         nameUserDefaults.synchronize()
-        mView.setGoButtonEnabled(enabled: !mView.getInputName().isEmpty)
     }
 }

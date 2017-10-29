@@ -12,11 +12,17 @@ class Message {
     
     let mSender: String
     let mMessage: String
-    let mTimestamp: Int
+    let mTimestampInSec: Int
     
     init(sender: String, message: String, timestamp: Int) {
         mSender = sender;
         mMessage = message
-        mTimestamp = timestamp
+        mTimestampInSec = timestamp
+    }
+
+    func getDate() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return formatter.string(from: NSDate(timeIntervalSince1970: TimeInterval(Int(mTimestampInSec))) as Date)
     }
 }

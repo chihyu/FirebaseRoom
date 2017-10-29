@@ -43,6 +43,7 @@ class ViewController: UIViewController, InputNameView {
 
     @IBAction func clickGo(_ sender: Any) {
         print("click go")
+        mInputNamePresenter.go()
     }
 }
 
