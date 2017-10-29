@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		4AA146351FA5A0D500517917 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA146341FA5A0D500517917 /* AppDelegate.swift */; };
-		4AA146371FA5A0D500517917 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA146361FA5A0D500517917 /* ViewController.swift */; };
+		4AA146371FA5A0D500517917 /* InputNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA146361FA5A0D500517917 /* InputNameViewController.swift */; };
 		4AA1463A1FA5A0D500517917 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA146381FA5A0D500517917 /* Main.storyboard */; };
 		4AA1463C1FA5A0D500517917 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AA1463B1FA5A0D500517917 /* Assets.xcassets */; };
 		4AA1463F1FA5A0D500517917 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA1463D1FA5A0D500517917 /* LaunchScreen.storyboard */; };
 		4AA1464A1FA5A0D500517917 /* FirebaseRoomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA146491FA5A0D500517917 /* FirebaseRoomTests.swift */; };
 		4AA146551FA5A0D500517917 /* FirebaseRoomUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA146541FA5A0D500517917 /* FirebaseRoomUITests.swift */; };
+		4AA146681FA5B25000517917 /* InputNamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA146671FA5B25000517917 /* InputNamePresenter.swift */; };
+		4AA146691FA5B25000517917 /* InputNamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA146671FA5B25000517917 /* InputNamePresenter.swift */; };
+		4AA1466B1FA5B9C900517917 /* InputNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1466A1FA5B9C900517917 /* InputNameView.swift */; };
+		4AA1466C1FA5B9C900517917 /* InputNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1466A1FA5B9C900517917 /* InputNameView.swift */; };
+		4AA1466E1FA5C81A00517917 /* InputNamePresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1466D1FA5C81A00517917 /* InputNamePresenterTest.swift */; };
+		4AA146701FA5C83000517917 /* MockInputNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1466F1FA5C83000517917 /* MockInputNameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +42,7 @@
 /* Begin PBXFileReference section */
 		4AA146311FA5A0D500517917 /* FirebaseRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AA146341FA5A0D500517917 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4AA146361FA5A0D500517917 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4AA146361FA5A0D500517917 /* InputNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNameViewController.swift; sourceTree = "<group>"; };
 		4AA146391FA5A0D500517917 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4AA1463B1FA5A0D500517917 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AA1463E1FA5A0D500517917 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +53,10 @@
 		4AA146501FA5A0D500517917 /* FirebaseRoomUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirebaseRoomUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AA146541FA5A0D500517917 /* FirebaseRoomUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRoomUITests.swift; sourceTree = "<group>"; };
 		4AA146561FA5A0D500517917 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AA146671FA5B25000517917 /* InputNamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNamePresenter.swift; sourceTree = "<group>"; };
+		4AA1466A1FA5B9C900517917 /* InputNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNameView.swift; sourceTree = "<group>"; };
+		4AA1466D1FA5C81A00517917 /* InputNamePresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNamePresenterTest.swift; sourceTree = "<group>"; };
+		4AA1466F1FA5C83000517917 /* MockInputNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockInputNameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +108,13 @@
 			isa = PBXGroup;
 			children = (
 				4AA146341FA5A0D500517917 /* AppDelegate.swift */,
-				4AA146361FA5A0D500517917 /* ViewController.swift */,
+				4AA146361FA5A0D500517917 /* InputNameViewController.swift */,
 				4AA146381FA5A0D500517917 /* Main.storyboard */,
 				4AA1463B1FA5A0D500517917 /* Assets.xcassets */,
 				4AA1463D1FA5A0D500517917 /* LaunchScreen.storyboard */,
 				4AA146401FA5A0D500517917 /* Info.plist */,
+				4AA146671FA5B25000517917 /* InputNamePresenter.swift */,
+				4AA1466A1FA5B9C900517917 /* InputNameView.swift */,
 			);
 			path = FirebaseRoom;
 			sourceTree = "<group>";
@@ -112,6 +124,8 @@
 			children = (
 				4AA146491FA5A0D500517917 /* FirebaseRoomTests.swift */,
 				4AA1464B1FA5A0D500517917 /* Info.plist */,
+				4AA1466D1FA5C81A00517917 /* InputNamePresenterTest.swift */,
+				4AA1466F1FA5C83000517917 /* MockInputNameView.swift */,
 			);
 			path = FirebaseRoomTests;
 			sourceTree = "<group>";
@@ -259,7 +273,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AA146371FA5A0D500517917 /* ViewController.swift in Sources */,
+				4AA146681FA5B25000517917 /* InputNamePresenter.swift in Sources */,
+				4AA146371FA5A0D500517917 /* InputNameViewController.swift in Sources */,
+				4AA1466B1FA5B9C900517917 /* InputNameView.swift in Sources */,
 				4AA146351FA5A0D500517917 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +284,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AA1466E1FA5C81A00517917 /* InputNamePresenterTest.swift in Sources */,
+				4AA1466C1FA5B9C900517917 /* InputNameView.swift in Sources */,
+				4AA146701FA5C83000517917 /* MockInputNameView.swift in Sources */,
+				4AA146691FA5B25000517917 /* InputNamePresenter.swift in Sources */,
 				4AA1464A1FA5A0D500517917 /* FirebaseRoomTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
