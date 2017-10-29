@@ -10,4 +10,9 @@ import Foundation
 
 protocol MessageService {
     func sendMessage(sender:String, message:String, timestamp:Int)
+    func setMessageAddedDelegate(delegate:MessageAddedDelegate)
+}
+
+protocol MessageAddedDelegate {
+    func messageAdded(message: Message)
 }

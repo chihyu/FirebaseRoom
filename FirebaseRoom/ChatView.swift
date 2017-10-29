@@ -11,4 +11,5 @@ import Foundation
 protocol ChatView {
     func getInutMessage() -> String
     func cleanInputMessage()
+    func messageAdded()
 }

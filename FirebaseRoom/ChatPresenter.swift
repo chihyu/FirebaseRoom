@@ -8,12 +8,13 @@
 
 import Foundation
 
-class ChatPresenter {
+class ChatPresenter: MessageAddedDelegate {
 
     let mView: ChatView
     let mMessageService: MessageService
     let mUserName: String
     var nameUserDefaults :UserDefaults!
+    var mMessages = [Message]()
     
     init(view: ChatView, messageService: MessageService, userName: String) {
         mView = view
@@ -25,5 +26,18 @@ class ChatPresenter {
     func send() {
         mMessageService.sendMessage(sender: mUserName, message: mView.getInutMessage(), timestamp: Int(NSDate().timeIntervalSince1970 * 1000.0))
         mView.cleanInputMessage()
+    }
+    
+    func messageAdded(message: Message) {
+        mMessages.append(message)
+        mView.messageAdded()
+    }
+    
+    func getMessageCount() -> Int {
+        return mMessages.count
+    }
+
+    func getMessage(index:Int) -> Message {
+        return mMessages[index]
     }
 }

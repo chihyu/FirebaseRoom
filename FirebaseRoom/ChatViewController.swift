@@ -15,24 +15,30 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var mInputMessageTextField: UITextField!
     @IBOutlet weak var mTableView: UITableView!
     var mPresenter:ChatPresenter!
-    var ListArray: NSArray = ["Hello world", "Swift", "UITableView", "媽!我在這裡"]
+    var mMessages = [Message]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mPresenter = ChatPresenter(view: self, messageService: FirebaseMessageService(), userName: UserDefaults.standard.string(forKey: "name")!)
+        let messageService: MessageService = FirebaseMessageService()
+        mPresenter = ChatPresenter(view: self, messageService: messageService, userName: UserDefaults.standard.string(forKey: "name")!)
+        messageService.setMessageAddedDelegate(delegate: mPresenter)
         mTableView.dataSource = self
         mTableView.delegate = self
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ListArray.count
+        return mPresenter.getMessageCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "Cell")
-        
-        cell.textLabel?.text = "\(ListArray.object(at: indexPath.row))"
+        cell.textLabel?.text = mPresenter.getMessage(index: indexPath.row).mMessage
         return cell
+    }
+    
+    func messageAdded() {
+        mTableView.reloadData()
+        mTableView.scrollToRow(at: IndexPath(row: mPresenter.getMessageCount() - 1, section: 0), at: UITableViewScrollPosition.bottom, animated: false)
     }
     
     @IBAction func inputMessageChanged(_ sender: Any) {

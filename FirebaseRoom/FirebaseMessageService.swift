@@ -10,11 +10,12 @@ import Foundation
 import FirebaseDatabase
 
 class FirebaseMessageService: MessageService {
-    
+    var delegate: MessageAddedDelegate? = nil
     let MESSAGE_KEY = "message"
     let SENDER_KEY = "sender"
     let TIMESTAMP_KEY = "timestamp"
     
+    var mMessages = [Message]()
     var ref: DatabaseReference!
     var messageRef: DatabaseReference!
     
@@ -31,5 +32,13 @@ class FirebaseMessageService: MessageService {
             TIMESTAMP_KEY:  timestamp
             ] as [String : Any]
         itemRef.setValue(messageItem)
+    }
+    
+    func setMessageAddedDelegate(delegate:MessageAddedDelegate) {
+        self.delegate = delegate
+        messageRef.observe(.childAdded) { (snapshot:DataSnapshot) in
+            let dictionary = snapshot.value as! Dictionary<String, Any>
+            self.delegate!.messageAdded(message: Message(sender: dictionary["sender"] as! String, message: dictionary["message"] as! String, timestamp: dictionary["timestamp"] as! Int))
+        }
     }
 }

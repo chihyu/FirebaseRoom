@@ -64,6 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-409" y="61"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="xZw-ap-KiR">
@@ -74,9 +75,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dAY-n9-s6z">
-                                <rect key="frame" x="20" y="617" width="250" height="30"/>
+                                <rect key="frame" x="10" y="627" width="250" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="oQq-rF-wYU"/>
+                                    <constraint firstAttribute="width" constant="250" id="VN0-CF-kjH"/>
+                                    <constraint firstAttribute="height" constant="30" id="rLI-rx-Moy"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -86,11 +88,8 @@
                                 </connections>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XFk-de-Uhh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="460" id="FAt-Qk-558"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="6rs-Zm-9sM" detailTextLabel="4Ny-Ej-foQ" style="IBUITableViewCellStyleSubtitle" id="l0e-Pr-6kz">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -119,8 +118,11 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qV-ux-Yw2">
-                                <rect key="frame" x="290" y="617" width="65" height="30"/>
+                                <rect key="frame" x="270" y="627" width="95" height="30"/>
                                 <color key="backgroundColor" red="0.35837915539999998" green="0.86566483969999997" blue="0.40577974919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0Nx-Nd-9fk"/>
+                                </constraints>
                                 <state key="normal" title="Send">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -132,13 +134,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4QG-VP-xmi" firstAttribute="trailing" secondItem="XFk-de-Uhh" secondAttribute="trailing" id="Kg0-0J-xiO"/>
-                            <constraint firstItem="dAY-n9-s6z" firstAttribute="leading" secondItem="4QG-VP-xmi" secondAttribute="leading" constant="20" id="Sde-ni-dzD"/>
-                            <constraint firstItem="4QG-VP-xmi" firstAttribute="bottom" secondItem="dAY-n9-s6z" secondAttribute="bottom" constant="20" id="bRR-J2-QTN"/>
-                            <constraint firstItem="4QG-VP-xmi" firstAttribute="bottom" secondItem="2qV-ux-Yw2" secondAttribute="bottom" constant="20" id="gIL-R8-wQJ"/>
-                            <constraint firstItem="4QG-VP-xmi" firstAttribute="trailing" secondItem="2qV-ux-Yw2" secondAttribute="trailing" constant="20" id="mtT-GB-ocx"/>
+                            <constraint firstItem="dAY-n9-s6z" firstAttribute="leading" secondItem="4QG-VP-xmi" secondAttribute="leading" constant="10" id="Sde-ni-dzD"/>
+                            <constraint firstItem="4QG-VP-xmi" firstAttribute="bottom" secondItem="dAY-n9-s6z" secondAttribute="bottom" constant="10" id="bRR-J2-QTN"/>
+                            <constraint firstItem="4QG-VP-xmi" firstAttribute="bottom" secondItem="2qV-ux-Yw2" secondAttribute="bottom" constant="10" id="gIL-R8-wQJ"/>
+                            <constraint firstItem="4QG-VP-xmi" firstAttribute="trailing" secondItem="2qV-ux-Yw2" secondAttribute="trailing" constant="10" id="mtT-GB-ocx"/>
                             <constraint firstItem="XFk-de-Uhh" firstAttribute="top" secondItem="kcP-R0-SDY" secondAttribute="top" id="o6a-w3-WIo"/>
-                            <constraint firstItem="2qV-ux-Yw2" firstAttribute="leading" secondItem="dAY-n9-s6z" secondAttribute="trailing" constant="20" id="o9X-d6-Wbr"/>
+                            <constraint firstItem="2qV-ux-Yw2" firstAttribute="leading" secondItem="dAY-n9-s6z" secondAttribute="trailing" constant="10" id="o9X-d6-Wbr"/>
                             <constraint firstItem="XFk-de-Uhh" firstAttribute="leading" secondItem="4QG-VP-xmi" secondAttribute="leading" id="qU0-Dp-7tA"/>
+                            <constraint firstItem="dAY-n9-s6z" firstAttribute="top" secondItem="XFk-de-Uhh" secondAttribute="bottom" constant="10" id="xdK-ye-vAQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4QG-VP-xmi"/>
                     </view>
