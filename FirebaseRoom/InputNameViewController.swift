@@ -8,19 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController, InputNameView {
+class InputNameViewController: UIViewController, InputNameView {
     
-    let GO_BUTTON_ENABLED_ALPHA: CGFloat = 1
-    let GO_BUTTON_DISABLED_ALPHA: CGFloat = 0.5
+    private let GO_BUTTON_ENABLED_ALPHA: CGFloat = 1
+    private let GO_BUTTON_DISABLED_ALPHA: CGFloat = 0.5
+    
     @IBOutlet weak var mGoButton: UIButton!
     @IBOutlet weak var mInputNameTextField: UITextField!
-    var mInputNamePresenter:InputNamePresenter!
+    
+    private var mInputNamePresenter:InputNamePresenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         mInputNamePresenter = InputNamePresenter(view: self)
         setGoButtonEnabled(enabled: false)
+        mInputNameTextField.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,7 +45,6 @@ class ViewController: UIViewController, InputNameView {
     }
 
     @IBAction func clickGo(_ sender: Any) {
-        print("click go")
         mInputNamePresenter.go()
     }
 }
