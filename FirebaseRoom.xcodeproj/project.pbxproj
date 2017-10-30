@@ -37,6 +37,9 @@
 		4AA146731FA5D27E00517917 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA146721FA5D27E00517917 /* ChatViewController.swift */; };
 		4AA146751FA5DF5500517917 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AA146741FA5DF5500517917 /* GoogleService-Info.plist */; };
 		4AF543931FA762DD00695573 /* MessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF543921FA762DD00695573 /* MessageTests.swift */; };
+		4AF543961FA786A000695573 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF543951FA786A000695573 /* DateUtils.swift */; };
+		4AF543981FA7888900695573 /* DateUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF543971FA7888900695573 /* DateUtilsTests.swift */; };
+		4AF543991FA7891E00695573 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF543951FA786A000695573 /* DateUtils.swift */; };
 		A73C90527F61796531F6D936 /* Pods_FirebaseRoomUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E750A82BDCC4F6B0EA9F8913 /* Pods_FirebaseRoomUITests.framework */; };
 		EDD36FE9DCF3090253AF7E21 /* Pods_FirebaseRoomTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0705938B2D7D7DA50A802EE /* Pods_FirebaseRoomTests.framework */; };
 /* End PBXBuildFile section */
@@ -87,6 +90,8 @@
 		4AA146721FA5D27E00517917 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		4AA146741FA5DF5500517917 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4AF543921FA762DD00695573 /* MessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTests.swift; sourceTree = "<group>"; };
+		4AF543951FA786A000695573 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		4AF543971FA7888900695573 /* DateUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtilsTests.swift; sourceTree = "<group>"; };
 		73EDE864DEBDA5BFBB88A05F /* Pods-FirebaseRoomTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseRoomTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseRoomTests/Pods-FirebaseRoomTests.release.xcconfig"; sourceTree = "<group>"; };
 		84BAF3FFC9BE6B685379B8AA /* Pods-FirebaseRoomTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseRoomTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseRoomTests/Pods-FirebaseRoomTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8DDB96CE5EA9BA21957D9203 /* Pods-FirebaseRoomUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseRoomUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseRoomUITests/Pods-FirebaseRoomUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +194,7 @@
 				4A7184921FA5EF8700FA140C /* MessageService.swift */,
 				4A7184951FA5EFCB00FA140C /* FirebaseMessageService.swift */,
 				4A7184A01FA6064200FA140C /* Message.swift */,
+				4AF543951FA786A000695573 /* DateUtils.swift */,
 			);
 			path = FirebaseRoom;
 			sourceTree = "<group>";
@@ -204,6 +210,7 @@
 				4A71849C1FA5F21600FA140C /* ChatPresenterTests.swift */,
 				4A71849E1FA5F23100FA140C /* MockMessageService.swift */,
 				4AF543921FA762DD00695573 /* MessageTests.swift */,
+				4AF543971FA7888900695573 /* DateUtilsTests.swift */,
 			);
 			path = FirebaseRoomTests;
 			sourceTree = "<group>";
@@ -520,6 +527,7 @@
 				4A7184961FA5EFCB00FA140C /* FirebaseMessageService.swift in Sources */,
 				4AA1466B1FA5B9C900517917 /* InputNameView.swift in Sources */,
 				4AA146731FA5D27E00517917 /* ChatViewController.swift in Sources */,
+				4AF543961FA786A000695573 /* DateUtils.swift in Sources */,
 				4A71848D1FA5E3D700FA140C /* ChatView.swift in Sources */,
 				4A7184931FA5EF8700FA140C /* MessageService.swift in Sources */,
 				4A7184A11FA6064200FA140C /* Message.swift in Sources */,
@@ -541,8 +549,10 @@
 				4A71849B1FA5F19200FA140C /* MockChatView.swift in Sources */,
 				4AA146691FA5B25000517917 /* InputNamePresenter.swift in Sources */,
 				4A71848E1FA5E3D700FA140C /* ChatView.swift in Sources */,
+				4AF543991FA7891E00695573 /* DateUtils.swift in Sources */,
 				4A7184A21FA6064200FA140C /* Message.swift in Sources */,
 				4A7184941FA5EF8700FA140C /* MessageService.swift in Sources */,
+				4AF543981FA7888900695573 /* DateUtilsTests.swift in Sources */,
 				4AF543931FA762DD00695573 /* MessageTests.swift in Sources */,
 				4AA1464A1FA5A0D500517917 /* FirebaseRoomTests.swift in Sources */,
 				4A7184911FA5E4F900FA140C /* ChatPresenter.swift in Sources */,

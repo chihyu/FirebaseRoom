@@ -87,7 +87,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.mNameLabel!.layer.masksToBounds = true
         cell.mNameLabel!.layer.cornerRadius = 5
         cell.mMessageLabel!.text = mPresenter.getMessage(index: indexPath.row).mMessage
-        cell.mDateLabel!.text = mPresenter.getMessage(index: indexPath.row).getDate()
+        cell.mDateLabel!.text = DateUtils.toDateTimeString(timestampInSec: mPresenter.getMessage(index: indexPath.row).mTimestampInSec)
         return cell
     }
     

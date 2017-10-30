@@ -19,11 +19,6 @@ class MessageTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testGetDate() {
-        let testee: Message = Message(sender: "Katy", message: "Hello!", timestamp: 1509370830)
-        XCTAssertEqual("2017-10-30 21:40:30", testee.getDate())
-    }
 
     func testEuqal() {
         let testee1: Message = Message(sender: "Katy", message: "Hello!", timestamp: 1509370830)

@@ -18,7 +18,7 @@ class MockChatView: ChatView {
         mInputMessage = message
     }
 
-    func getInutMessage() -> String {
+    func getInputMessage() -> String {
         return mInputMessage
     }
     func cleanInputMessage() {

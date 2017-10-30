@@ -36,7 +36,7 @@ class ChatPresenterTests: XCTestCase {
         XCTAssertEqual(SENDER, mMessageService.getActualSender())
         XCTAssertEqual(message, mMessageService.getActualMessage())
         XCTAssertTrue(mMessageService.getActualTimestamp() != 0)
-        XCTAssertEqual("", mChatView.getInutMessage())
+        XCTAssertEqual("", mChatView.getInputMessage())
     }
     
     func testCheckButtonEnabled_withEmptyMessage() {
