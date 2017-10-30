@@ -31,4 +31,8 @@ class MockMessageService: MessageService {
     func getActualTimestamp() -> Int {
         return mActualTimestamp ?? 0
     }
+    
+    func setMessageAddedDelegate(delegate: MessageAddedDelegate) {
+        
+    }
 }

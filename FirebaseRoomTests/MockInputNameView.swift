@@ -10,11 +10,11 @@ import Foundation
 
 class MockInputNameView: InputNameView {
     
-    var mInputName: String! = ""
+    var mInputName: String? = ""
     var mEnabled: Bool = false
     
     func getInputName() -> String {
-        return mInputName
+        return mInputName ?? ""
     }
     
     func setGoButtonEnabled(enabled:Bool) {

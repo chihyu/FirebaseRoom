@@ -11,6 +11,8 @@ import Foundation
 class MockChatView: ChatView {
     
     var mInputMessage:String = ""
+    var mEnabled: Bool = false
+    var mMessageAddedCalled: Bool = false
     
     func expectInputMessage(message:String) {
         mInputMessage = message
@@ -21,5 +23,13 @@ class MockChatView: ChatView {
     }
     func cleanInputMessage() {
         mInputMessage = ""
+    }
+    
+    func setButtonEnabled(enabled: Bool) {
+        mEnabled = enabled
+    }
+
+    func messageAdded() {
+        mMessageAddedCalled = true
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Message {
+class Message: Equatable {
     
     let mSender: String
     let mMessage: String
@@ -24,5 +24,11 @@ class Message {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return formatter.string(from: NSDate(timeIntervalSince1970: TimeInterval(Int(mTimestampInSec))) as Date)
+    }
+    
+    static func ==(lhs: Message, rhs: Message) -> Bool {
+        return lhs.mSender.elementsEqual(rhs.mSender) &&
+            lhs.mTimestampInSec == rhs.mTimestampInSec &&
+            lhs.mMessage.elementsEqual(rhs.mMessage)
     }
 }
