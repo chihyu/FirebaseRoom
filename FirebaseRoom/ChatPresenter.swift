@@ -13,24 +13,22 @@ class ChatPresenter: MessageAddedDelegate {
     let mView: ChatView
     let mMessageService: MessageService
     let mUserName: String
-    var nameUserDefaults :UserDefaults!
     var mMessages = [Message]()
     
     init(view: ChatView, messageService: MessageService, userName: String) {
         mView = view
         mMessageService = messageService
         mUserName = userName
-        nameUserDefaults = UserDefaults.standard
     }
 
     func send() {
-        mMessageService.sendMessage(sender: mUserName, message: mView.getInutMessage(), timestamp: Int(NSDate().timeIntervalSince1970))
+        mMessageService.sendMessage(sender: mUserName, message: mView.getInputMessage(), timestamp: Int(NSDate().timeIntervalSince1970))
         mView.cleanInputMessage()
         checkButtonEnabled()
     }
     
     func checkButtonEnabled() {
-        mView.setButtonEnabled(enabled: !mView.getInutMessage().isEmpty)
+        mView.setButtonEnabled(enabled: !mView.getInputMessage().isEmpty)
     }
 
     func messageAdded(message: Message) {

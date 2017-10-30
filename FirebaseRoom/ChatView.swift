@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ChatView {
-    func getInutMessage() -> String
+    func getInputMessage() -> String
     func cleanInputMessage()
     func messageAdded()
     func setButtonEnabled(enabled: Bool)

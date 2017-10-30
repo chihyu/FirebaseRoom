@@ -161,6 +161,7 @@
                                 <constraints>
                                     <constraint firstItem="dAY-n9-s6z" firstAttribute="leading" secondItem="H6G-rA-dKb" secondAttribute="leadingMargin" id="XbC-Ha-QKc"/>
                                     <constraint firstItem="2qV-ux-Yw2" firstAttribute="centerY" secondItem="H6G-rA-dKb" secondAttribute="centerY" id="cN5-oO-om1"/>
+                                    <constraint firstItem="2qV-ux-Yw2" firstAttribute="leading" secondItem="dAY-n9-s6z" secondAttribute="trailing" constant="10" id="nF9-fe-m4a"/>
                                     <constraint firstItem="dAY-n9-s6z" firstAttribute="centerY" secondItem="H6G-rA-dKb" secondAttribute="centerY" id="zTb-EV-r9X"/>
                                 </constraints>
                             </stackView>

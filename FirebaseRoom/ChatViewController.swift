@@ -18,6 +18,8 @@ class MessageCell : UITableViewCell {
 class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ChatView, UITextFieldDelegate {
 
     private let INPUT_CONTAINER_BOTTOM_CONSTRAINT:CGFloat! = 10;
+    private let BUTTON_ENABLED_ALPHA: CGFloat! = 1
+    private let BUTTON_DISABLED_ALPHA: CGFloat! = 0.5
     
     @IBOutlet weak var mSendButton: UIButton!
     @IBOutlet weak var mInputMessageTextField: UITextField!
@@ -25,12 +27,11 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var mInputContainer: UIStackView!
     @IBOutlet weak var mInputContainerBottomConstraint: NSLayoutConstraint!
     
-    private var mPresenter:ChatPresenter!
-    private var heightKeyboard : CGFloat?
+    private var mPresenter: ChatPresenter!
+    private var mKeyboardHeight: CGFloat?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        edgesForExtendedLayout = []
         let messageService: MessageService = FirebaseMessageService()
         mPresenter = ChatPresenter(view: self, messageService: messageService, userName: UserDefaults.standard.string(forKey: "name")!)
         messageService.setMessageAddedDelegate(delegate: mPresenter)
@@ -41,14 +42,14 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         setButtonEnabled(enabled: false)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardHided(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
    }
     
     @objc func keyboardShown(notification: NSNotification) {
         if let infoKey  = notification.userInfo?[UIKeyboardFrameEndUserInfoKey],
             let rawFrame = (infoKey as AnyObject).cgRectValue {
             let keyboardFrame = view.convert(rawFrame, from: nil)
-            self.heightKeyboard = keyboardFrame.size.height
+            self.mKeyboardHeight = keyboardFrame.size.height
             UIView.animate(withDuration: 1.5, animations: {
                 self.mInputContainerBottomConstraint.constant = keyboardFrame.size.height + self.INPUT_CONTAINER_BOTTOM_CONSTRAINT
                 self.mInputContainer.layoutIfNeeded()
@@ -56,11 +57,11 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
-    @objc func keyboardHided(notification: NSNotification) {
+    @objc func keyboardHidden(notification: NSNotification) {
         if let infoKey  = notification.userInfo?[UIKeyboardFrameEndUserInfoKey],
             let rawFrame = (infoKey as AnyObject).cgRectValue {
             let keyboardFrame = view.convert(rawFrame, from: nil)
-            self.heightKeyboard = keyboardFrame.size.height
+            self.mKeyboardHeight = keyboardFrame.size.height
             UIView.animate(withDuration: 1.5, animations: {
                 self.mInputContainerBottomConstraint.constant = self.INPUT_CONTAINER_BOTTOM_CONSTRAINT
                 self.mInputContainer.layoutIfNeeded()
@@ -100,15 +101,16 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @IBAction func clickSendButton(_ sender: Any) {
+        mInputMessageTextField.resignFirstResponder()
         mPresenter.send()
     }
     
     func setButtonEnabled(enabled: Bool) {
         mSendButton.isEnabled = enabled
-        mSendButton.alpha = enabled ? 1 : 0.5
+        mSendButton.alpha = enabled ? BUTTON_ENABLED_ALPHA : BUTTON_DISABLED_ALPHA
     }
 
-    func getInutMessage() -> String {
+    func getInputMessage() -> String {
         return mInputMessageTextField.text ?? ""
     }
     
