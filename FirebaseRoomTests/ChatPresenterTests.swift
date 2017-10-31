@@ -29,7 +29,6 @@ class ChatPresenterTests: XCTestCase {
     }
     
     func testSend() {
-        
         let message = "How are you?"
         mChatView.expectInputMessage(message: message)
         mTestee.send()
@@ -39,13 +38,13 @@ class ChatPresenterTests: XCTestCase {
         XCTAssertEqual("", mChatView.getInputMessage())
     }
     
-    func testCheckButtonEnabled_withEmptyMessage() {
+    func testCheckButtonEnabledWithEmptyMessage() {
         mChatView.expectInputMessage(message: "")
         mTestee.checkButtonEnabled()
         XCTAssertFalse(mChatView.mEnabled)
     }
     
-    func testCheckButtonEnabled_withMessage() {
+    func testCheckButtonEnabledWithMessage() {
 
         mChatView.expectInputMessage(message: "Hello")
         mTestee.checkButtonEnabled()

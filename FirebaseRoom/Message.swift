@@ -19,12 +19,6 @@ class Message: Equatable {
         mMessage = message
         mTimestampInSec = timestamp
     }
-
-    func getDate() -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        return formatter.string(from: NSDate(timeIntervalSince1970: TimeInterval(Int(mTimestampInSec))) as Date)
-    }
     
     static func ==(lhs: Message, rhs: Message) -> Bool {
         return lhs.mSender.elementsEqual(rhs.mSender) &&

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -15,7 +15,7 @@
         <!--Input Name View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="InputNameViewController" customModule="FirebaseRoom" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InputNameView" id="BYZ-38-t0r" customClass="InputNameViewController" customModule="FirebaseRoom" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,13 +72,13 @@
         <!--Chat View Controller-->
         <scene sceneID="xZw-ap-KiR">
             <objects>
-                <viewController id="MqF-oF-pGm" customClass="ChatViewController" customModule="FirebaseRoom" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatView" id="MqF-oF-pGm" customClass="ChatViewController" customModule="FirebaseRoom" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kcP-R0-SDY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XFk-de-Uhh">
-                                <rect key="frame" x="0.0" y="20" width="375" height="607"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="597"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="l0e-Pr-6kz" customClass="MessageCell" customModule="FirebaseRoom" customModuleProvider="target">
@@ -129,7 +129,7 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H6G-rA-dKb">
-                                <rect key="frame" x="10" y="637" width="355" height="30"/>
+                                <rect key="frame" x="10" y="627" width="355" height="30"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dAY-n9-s6z">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="30"/>
@@ -169,9 +169,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="4QG-VP-xmi" firstAttribute="bottom" secondItem="H6G-rA-dKb" secondAttribute="bottom" id="FyO-oz-G3z"/>
                             <constraint firstItem="4QG-VP-xmi" firstAttribute="trailing" secondItem="XFk-de-Uhh" secondAttribute="trailing" id="Kg0-0J-xiO"/>
-                            <constraint firstAttribute="bottom" secondItem="H6G-rA-dKb" secondAttribute="bottom" id="OIH-rk-2aZ"/>
+                            <constraint firstAttribute="bottom" secondItem="H6G-rA-dKb" secondAttribute="bottom" constant="10" id="OIH-rk-2aZ"/>
                             <constraint firstItem="H6G-rA-dKb" firstAttribute="leading" secondItem="4QG-VP-xmi" secondAttribute="leading" constant="10" id="e6Y-wg-OzV"/>
                             <constraint firstItem="XFk-de-Uhh" firstAttribute="top" secondItem="kcP-R0-SDY" secondAttribute="top" constant="20" id="o6a-w3-WIo"/>
                             <constraint firstItem="XFk-de-Uhh" firstAttribute="leading" secondItem="4QG-VP-xmi" secondAttribute="leading" id="qU0-Dp-7tA"/>

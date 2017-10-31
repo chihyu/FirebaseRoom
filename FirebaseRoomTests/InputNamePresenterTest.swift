@@ -20,7 +20,7 @@ class InputNamePresenterTest: XCTestCase {
         super.tearDown()
     }
     
-    func testCheckGoButtonEnabled_withName() {
+    func testCheckGoButtonEnabledWithName() {
         let inputNameView:MockInputNameView = MockInputNameView()
         inputNameView.mInputName = "Mary"
         let testee: InputNamePresenter = InputNamePresenter(view: inputNameView)
@@ -28,11 +28,19 @@ class InputNamePresenterTest: XCTestCase {
         XCTAssertEqual(true, inputNameView.mEnabled)
     }
 
-    func testCheckGoButtonEnabled_withEmptyName() {
+    func testCheckGoButtonEnabledWithEmptyName() {
         let inputNameView:MockInputNameView = MockInputNameView()
         inputNameView.mInputName = ""
         let testee: InputNamePresenter = InputNamePresenter(view: inputNameView)
         testee.checkGoButtonEnabled()
         XCTAssertEqual(false, inputNameView.mEnabled)
+    }
+    
+    func testGo() {
+        let inputNameView:MockInputNameView = MockInputNameView()
+        inputNameView.mInputName = "Katy"
+        let testee: InputNamePresenter = InputNamePresenter(view: inputNameView)
+        testee.go()
+        XCTAssertEqual("Katy", UserDefaults.standard.string(forKey: "name"))
     }
 }

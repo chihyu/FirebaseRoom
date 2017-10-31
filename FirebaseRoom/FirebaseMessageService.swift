@@ -11,21 +11,23 @@ import FirebaseDatabase
 
 class FirebaseMessageService: MessageService {
     var delegate: MessageAddedDelegate? = nil
+    
+    let MESSAGES_KEY = "messages"
     let MESSAGE_KEY = "message"
     let SENDER_KEY = "sender"
     let TIMESTAMP_KEY = "timestamp"
     
     var mMessages = [Message]()
     var ref: DatabaseReference!
-    var messageRef: DatabaseReference!
+    var mMessagesRef: DatabaseReference!
     
     init() {
         ref = Database.database().reference()
-        messageRef = ref.child("messages")
+        mMessagesRef = ref.child(MESSAGES_KEY)
     }
 
     func sendMessage(sender:String, message:String, timestamp:Int) {
-        let itemRef = messageRef.childByAutoId()
+        let itemRef = mMessagesRef.childByAutoId()
         let messageItem = [
             MESSAGE_KEY: message,
             SENDER_KEY: sender,
@@ -36,9 +38,9 @@ class FirebaseMessageService: MessageService {
     
     func setMessageAddedDelegate(delegate:MessageAddedDelegate) {
         self.delegate = delegate
-        messageRef.observe(.childAdded) { (snapshot:DataSnapshot) in
+        mMessagesRef.observe(.childAdded) { (snapshot:DataSnapshot) in
             let dictionary = snapshot.value as! Dictionary<String, Any>
-            self.delegate!.messageAdded(message: Message(sender: dictionary["sender"] as! String, message: dictionary["message"] as! String, timestamp: dictionary["timestamp"] as! Int))
+            self.delegate!.messageAdded(message: Message(sender: dictionary[self.SENDER_KEY] as! String, message: dictionary[self.MESSAGE_KEY] as! String, timestamp: dictionary[self.TIMESTAMP_KEY] as! Int))
         }
     }
 }
